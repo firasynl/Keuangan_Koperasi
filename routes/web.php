@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\transaksiController;
+use App\Http\Controllers\userController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +18,11 @@ use App\Http\Controllers\transaksiController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
 Route::resource('/simpanans', \App\Http\Controllers\SimpananController::class);
+
 
 Route::get('/transaksi', [transaksiController::class, 'index'])->name('transaksi');
 
@@ -29,3 +33,6 @@ Route::post('/storeCreate', [transaksiController::class, "store"])->name("storeC
 Route::get('/edit/{id}Pendapatan', [transaksiController::class, "edit"])->name("edittransaksi");
 Route::post('/update/{id}transaksi', [transaksiController::class, "update"])->name("updatetransaksi");
 Route::get('/delete/{id}transaksi', [transaksiController::class, "delete"])->name("deletetransaksi");
+
+Route::resource('user', userController::class);
+

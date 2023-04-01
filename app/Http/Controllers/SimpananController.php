@@ -7,6 +7,7 @@ use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class SimpananController extends Controller
 {
@@ -30,14 +31,14 @@ class SimpananController extends Controller
             'tgl_setoran' => 'required',
             'anggota_id' => 'required',
             'jumlah_simpanan' => 'required',
-            'jenis_simpanan' => 'required'
+            'jenis_simpanan' => 'required',
         ]);
 
-        $input = $request->all();
+        $data = $request->all();
+        // dd($data);
+        Simpanan::create($request->all());
 
-        Simpanan::create($input);
-
-        return redirect()->route('simpanans.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('simpanans.index')->with('success', 'Data Berhasil Disimpan!');
     }
 
     public function show(Simpanan $simpanan)
@@ -58,15 +59,13 @@ class SimpananController extends Controller
             'tgl_setoran' => 'required',
             'anggota_id' => 'required',
             'jumlah_simpanan' => 'required',
-            'jenis_simpanan' => 'required'
+            'jenis_simpanan' => 'required',
         ]);
 
-        $input = $request->all();
-
-        $simpanan->update($input);
+        $simpanan->update($request->all());
 
         //redirect to index
-        return redirect()->route('simpanans.index')->with(['success' => 'Data Berhasil Diubah!']);
+        return redirect()->route('simpanans.index')->with('success', 'Data Berhasil Diubah!');
     }
 
     public function destroy(Simpanan $simpanan): RedirectResponse
