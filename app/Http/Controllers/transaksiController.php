@@ -9,17 +9,17 @@ class transaksiController extends Controller
 {
     public function index(){
         $data = tabel::all();
-        return view('transaksi', compact('data'));
+        return view('transaksi.transaksi', compact('data'));
     }
 
     public function create(){
-        return view('create');
+        return view('transaksi.create');
     }
 
     public function edit($id)
     {
         $pdp = tabel::find($id);
-        return view("edit", ["pdp" => $pdp]);
+        return view("transaksi.edit", ["pdp" => $pdp]);
     }
 
     public function store(Request $request)
@@ -35,7 +35,7 @@ class transaksiController extends Controller
 
         tabel::create($validated_data);
 
-        return redirect(route("transaksi"));
+        return redirect(route("transaksi.transaksi"));
     }
 
     public function update($id, Request $request)
@@ -51,12 +51,12 @@ class transaksiController extends Controller
 
         tabel::where("id", $id)->update($validated_data);
 
-        return redirect(route("transaksi"));
+        return redirect(route("transaksi.transaksi"));
     }
 
     public function delete($id)
     {
         tabel::where("id", $id)->delete();
-        return redirect(route("transaksi"));
+        return redirect(route("transaksi.transaksi"));
     }
 }
