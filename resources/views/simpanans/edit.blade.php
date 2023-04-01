@@ -50,9 +50,10 @@
             <div class="form-group">
                 <strong>Jenis Simpanan:</strong>
                 <select class="form-control">
-                <option>Simpanan Pokok</option>
-                <option>Simpanan Wajib</option>
-                <option>Simpanan Sukarela</option>
+                <option selected>Pilih Jenis Simpanan</option>
+                <option value="Simpanan Pokok">Simpanan Pokok</option>
+                <option value="Simpanan Wajib">Simpanan Wajib</option>
+                <option value="Simpanan Sukarela">Simpanan Sukarela</option>
                 </select>
             </div>
         </div>

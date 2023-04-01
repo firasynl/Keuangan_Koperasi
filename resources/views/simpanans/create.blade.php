@@ -14,7 +14,7 @@
      
 @if ($errors->any())
     <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <strong>Opps!</strong> Input salah !!<br><br>
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
@@ -30,28 +30,29 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Tanggal Setoran:</strong>
-                <input type="date" name="tanggal" class="form-control">
+                <input type="date" name="tgl_setoran" class="form-control">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>ID Anggota:</strong>
-                <input type="text" name="id_anggota" class="form-control" placeholder="ID Anggota">
+                <input type="text" name="anggota_id" class="form-control" placeholder="ID Anggota">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Jumlah Simpanan:</strong>
-                <input type="text" name="jumlah_simpanan" class="form-control" placeholder="Contoh: Rp 15.000">
+                <input type="number" name="jumlah_simpanan" class="form-control" placeholder="Contoh: Rp 15.000">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Jenis Simpanan:</strong>
-                <select class="form-control">
-                <option>Simpanan Pokok</option>
-                <option>Simpanan Wajib</option>
-                <option>Simpanan Sukarela</option>
+                <select class="form-control" name="jenis_simpanan">
+                <option selected>Pilih Jenis Simpanan</option>
+                <option value="Simpanan Pokok">Simpanan Pokok</option>
+                <option value="Simpanan Wajib">Simpanan Wajib</option>
+                <option value="Simpanan Sukarela">Simpanan Sukarela</option>
                 </select>
             </div>
         </div>
