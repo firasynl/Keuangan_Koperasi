@@ -31,13 +31,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Tanggal Setoran:</strong>
-                <input type="date" name="tanggal" class="form-control">
+                <input type="date" name="tgl_setoran" class="form-control">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>ID Anggota:</strong>
-                <input type="text" name="id_anggota" class="form-control" placeholder="ID Anggota">
+                <input type="text" name="anggota_id" class="form-control" placeholder="ID Anggota">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -49,8 +49,8 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Jenis Simpanan:</strong>
-                <select class="form-control">
-                <option selected>Pilih Jenis Simpanan</option>
+                <select class="form-control"  name="jenis_simpanan">
+                <option selected >Pilih Jenis Simpanan</option>
                 <option value="Simpanan Pokok">Simpanan Pokok</option>
                 <option value="Simpanan Wajib">Simpanan Wajib</option>
                 <option value="Simpanan Sukarela">Simpanan Sukarela</option>

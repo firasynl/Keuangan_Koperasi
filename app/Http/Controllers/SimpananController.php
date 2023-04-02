@@ -61,7 +61,7 @@ class SimpananController extends Controller
             'jumlah_simpanan' => 'required',
             'jenis_simpanan' => 'required',
         ]);
-
+        
         $simpanan->update($request->all());
 
         //redirect to index
