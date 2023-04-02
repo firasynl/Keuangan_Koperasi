@@ -15,7 +15,7 @@ return new class extends Migration
             $table->integer('id_users');
             $table->unique('id_users');
             $table->string('nama');
-            $table->integer('no_telp');
+            $table->string('no_telp');
             $table->string('kategori_users');
         });
     }

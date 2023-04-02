@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Data Mahasiswa</title>
+    <title>Keuangan Koperasi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   </head>
   <body class="bg-light">  
@@ -25,7 +25,7 @@
                         <a class="nav-link" href="/transaksi">Transaksi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/simpanan">Simpanan</a>
+                        <a class="nav-link" href="/simpanans/simpanan">Simpanan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/laporan">Laporan Keuangan</a>
