@@ -1,20 +1,14 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+@extends('layouts.main')
+    @section('content')
     <title>CRUD Investasi</title>
   </head>
   <body>
     <h1 class="text-center mb-4">Data Investasi</h1>
     
     <div class="container">
+        <div class="pb-3">
         <a href="/Investasi/TambahDataInvestasi" class="btn btn-success">Tambah +</a>
+        </div>
         <div class="row">
             @if ($message = Session::get('success'))
                 <div class="alert alert-success" role="alert">
@@ -44,7 +38,7 @@
                         <td>{{$row->jenis_investasi}}</td>
                         <td>{{$row->nama_investor}}</td>
                         <td>
-                            <a href="/Investasi/Delete/{{$row->id_investasi}}" class="btn btn-danger">Delete</a>
+                            <a href="/Investasi/Delete/{{$row->id_investasi}}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                             <a href="/Investasi/ShowDataInvestasi/{{$row->id_investasi}}" class="btn btn-info">Update</a>
                         </td>
                     </tr>
@@ -67,4 +61,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
   </body>
-</html>
+  @endsection

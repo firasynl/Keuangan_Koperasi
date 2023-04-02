@@ -38,7 +38,7 @@ Route::get('/delete/{id}transaksi', [transaksiController::class, "delete"])->nam
 Route::resource('user', userController::class);
 
 /* Investasi Routes */
-Route::get('/Investasi/DataInvestasi', [InvestasiController::class, 'index'])->name('/Investasi/DataInvestasi');
+Route::get('/Investasi', [InvestasiController::class, 'index'])->name('/Investasi/DataInvestasi');
 
 Route::get('/Investasi/TambahDataInvestasi', [InvestasiController::class, 'TambahDataInvestasi'])->name('/Investasi/TambahDataInvestasi');
 Route::post('/Investasi/InsertDataInvestasi', [InvestasiController::class, 'InsertDataInvestasi'])->name('/Investasi/InsertDataInvestasi');
