@@ -22,6 +22,7 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+// Route Simpanan
 Route::resource('/simpanans', \App\Http\Controllers\SimpananController::class);
 
 
