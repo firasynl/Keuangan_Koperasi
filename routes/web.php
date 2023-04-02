@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\transaksiController;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\InvestasiController;
 
 
 /*
@@ -35,4 +36,15 @@ Route::post('/update/{id}transaksi', [transaksiController::class, "update"])->na
 Route::get('/delete/{id}transaksi', [transaksiController::class, "delete"])->name("deletetransaksi");
 
 Route::resource('user', userController::class);
+
+/* Investasi Routes */
+Route::get('/Investasi/DataInvestasi', [InvestasiController::class, 'index'])->name('/Investasi/DataInvestasi');
+
+Route::get('/Investasi/TambahDataInvestasi', [InvestasiController::class, 'TambahDataInvestasi'])->name('/Investasi/TambahDataInvestasi');
+Route::post('/Investasi/InsertDataInvestasi', [InvestasiController::class, 'InsertDataInvestasi'])->name('/Investasi/InsertDataInvestasi');
+
+Route::get('/Investasi/ShowDataInvestasi/{id_investasi}', [InvestasiController::class, 'ShowDataInvestasi'])->name('/Investasi/ShowDataInvestasi');
+Route::post('/Investasi/UpdateDataInvestasi/{id_investasi}', [InvestasiController::class, 'UpdateDataInvestasi'])->name('/Investasi/UpdateDataInvestasi');
+
+Route::get('/Investasi/Delete/{id_investasi}', [InvestasiController::class, 'Delete'])->name('Delete');
 
