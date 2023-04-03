@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('investasis', function (Blueprint $table) {
-            $table->id('id_investasi')->unique();
+            $table->integer('id_investasi')->unique();
             $table->date('tanggal');
             $table->bigInteger('nilai_investasi');
             $table->enum('jenis_investasi', ['Saham', 'Obligasi', 'Reksa Dana']);

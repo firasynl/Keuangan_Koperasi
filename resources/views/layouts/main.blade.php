@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Data Mahasiswa</title>
+    <title>Keuangan Koperasi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   </head>
   <body class="bg-light">  
@@ -19,13 +19,13 @@
                         <a class="nav-link" href="/user">Pengguna</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/investasi">Investasi</a>
+                        <a class="nav-link" href="/Investasi">Investasi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/transaksi">Transaksi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/simpanan">Simpanan</a>
+                        <a class="nav-link" href="/simpanans/simpanan">Simpanan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/laporan">Laporan Keuangan</a>
@@ -40,10 +40,15 @@
     <main class="container">
         @if(Session::has('success'))
             <div class = "pt3">
-                <div class = "alert alert-success">
+                <div class = "alert alert-success" Id="alert">
                     {{Session::get('success')}}
                 </div>
             </div>
+            <script>
+                    setTimeout(function(){
+                        document.getElementById('alert').style.display = 'none';
+                    }, 2500);
+            </script>
         @endif
         @yield('content')
     </main>
