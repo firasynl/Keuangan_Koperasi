@@ -19,7 +19,7 @@
                         <a class="nav-link" href="/user">Pengguna</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/investasi">Investasi</a>
+                        <a class="nav-link" href="/Investasi">Investasi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/transaksi">Transaksi</a>
@@ -40,10 +40,15 @@
     <main class="container">
         @if(Session::has('success'))
             <div class = "pt3">
-                <div class = "alert alert-success">
+                <div class = "alert alert-success" Id="alert">
                     {{Session::get('success')}}
                 </div>
             </div>
+            <script>
+                    setTimeout(function(){
+                        document.getElementById('alert').style.display = 'none';
+                    }, 2500);
+            </script>
         @endif
         @yield('content')
     </main>
