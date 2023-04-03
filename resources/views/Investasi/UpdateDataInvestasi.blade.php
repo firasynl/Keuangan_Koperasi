@@ -22,6 +22,11 @@
                         <form action="/Investasi/UpdateDataInvestasi/{{$data->id_investasi}}" method="POST">
                             @csrf
                             <div class="mb-3">
+                              <label for="InputId" class="form-label">Id</label>
+                              <input type="number" name="id_investasi" class="form-control" id="InputId" aria-describedby="" value="{{$data->id_investasi}}">
+                              <div id="InputId" class="form-text"></div>
+                            </div>
+                            <div class="mb-3">
                               <label for="InputTanggal" class="form-label">Tanggal</label>
                               <input type="date" name="tanggal" class="form-control" id="InputTanggal" aria-describedby="" value="{{$data->tanggal}}">
                               <div id="InputTanggal" class="form-text"></div>
