@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LaporanController;
+
 
 use App\Http\Controllers\transaksiController;
 use App\Http\Controllers\userController;
@@ -21,6 +23,8 @@ use App\Http\Controllers\InvestasiController;
 Route::get('/', function () {
     return view('dashboard');
 });
+
+Route::resource('laporan',LaporanController::class);
 
 // Route Simpanan
 Route::resource('/simpanans', \App\Http\Controllers\SimpananController::class);
