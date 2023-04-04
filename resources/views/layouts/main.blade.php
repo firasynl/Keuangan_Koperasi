@@ -25,7 +25,7 @@
                         <a class="nav-link" href="/transaksi">Transaksi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/simpanans/simpanan">Simpanan</a>
+                        <a class="nav-link" href="/simpanans">Simpanan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/laporan">Laporan Keuangan</a>

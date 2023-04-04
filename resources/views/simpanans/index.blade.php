@@ -1,4 +1,4 @@
-@extends('simpanans.layout')
+@extends('layouts.main')
      
 @section('content')
     <div class="row">
