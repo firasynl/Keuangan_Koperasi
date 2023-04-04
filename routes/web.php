@@ -7,6 +7,8 @@ use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\transaksiController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\InvestasiController;
+use App\Http\Controllers\HutangController;
+
 
 
 /*
@@ -52,4 +54,7 @@ Route::get('/Investasi/ShowDataInvestasi/{id_investasi}', [InvestasiController::
 Route::post('/Investasi/UpdateDataInvestasi/{id_investasi}', [InvestasiController::class, 'UpdateDataInvestasi'])->name('/Investasi/UpdateDataInvestasi');
 
 Route::get('/Investasi/Delete/{id_investasi}', [InvestasiController::class, 'Delete'])->name('Delete');
+
+//Router hutang
+Route::resource('/hutangs', HutangController::class);
 

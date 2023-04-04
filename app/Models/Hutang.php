@@ -9,5 +9,8 @@ class Hutang extends Model
 {
     use HasFactory;
 
+
+    protected $fillable = ['nama_kreditur', 'jenis_hutang', 'jumlah_hutang','tgl_jatuhtempo',
+    ];
     
 }
