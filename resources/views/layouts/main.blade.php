@@ -31,7 +31,7 @@
                         <a class="nav-link" href="/laporan">Laporan Keuangan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/hutang">Hutang</a>
+                        <a class="nav-link" href="/hutangs">Hutang</a>
                     </li>
                 </ul>
             </div>
