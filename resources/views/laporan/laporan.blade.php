@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.mainpage')
 @section('content')    
         <!-- START DATA -->
         <div class="my-3 p-3 bg-body rounded shadow-sm">

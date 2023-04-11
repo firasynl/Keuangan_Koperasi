@@ -1,7 +1,6 @@
-@extends('Investasi.layout')
+@extends('layouts.mainpage')
 @section('content')    
     <h1 class="text-center mb-4">Data Investasi</h1>
-    
     <div class="container">
         <div class="pb-3">
             <a href="/Investasi/TambahDataInvestasi" class="btn btn-success">Tambah +</a>

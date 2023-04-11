@@ -1,6 +1,12 @@
-@extends('layouts.main')
+@extends('layouts.mainpage')
 @section('content')    
         <!-- START DATA -->
+        <style>
+            .d-inline {
+                display:inline !important;
+            }
+        </style>
+
         <div class="my-3 p-3 bg-body rounded shadow-sm">
                 <div class="pb-3">
                   <a href='user/create' class="btn btn-primary">+ Tambah Data</a>

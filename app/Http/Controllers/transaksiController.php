@@ -35,7 +35,7 @@ class transaksiController extends Controller
 
         tabel::create($validated_data);
 
-        return redirect(route("transaksi.transaksi"));
+        return redirect(route("transaksi"));
     }
 
     public function update($id, Request $request)
@@ -51,12 +51,12 @@ class transaksiController extends Controller
 
         tabel::where("id", $id)->update($validated_data);
 
-        return redirect(route("transaksi.transaksi"));
+        return redirect(route("transaksi"));
     }
 
     public function delete($id)
     {
         tabel::where("id", $id)->delete();
-        return redirect(route("transaksi.transaksi"));
+        return redirect(route("transaksi"));
     }
 }
