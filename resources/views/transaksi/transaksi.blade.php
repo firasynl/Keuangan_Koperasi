@@ -1,8 +1,7 @@
-@extends('layouts.mainpage')
+
+@extends('layouts.main')
+
 @section('content')
-
-
-
 <h1 class="text-center mb4 mt-2"> Daftar Transaksi</h1>
 
 <div class="tombol">

@@ -1,6 +1,6 @@
-@extends('layout.main')
+@extends('layouts.main')
 
-@section('main-content')
+@section('content')
 
 <h2 class="fw-bold mb-4 pt-2 text-center">Form Input Riwayat Transaksi</h2>
         <form action="{{ route("storeCreate") }}" method="POST" class="form-custom px-4 pb-5 pt-4 mb-4">
