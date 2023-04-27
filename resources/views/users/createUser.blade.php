@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.mainlayout')
 @section('content')
 <!-- START FORM -->
 <form action='{{ url('user') }}' method='post'>
@@ -30,7 +30,7 @@
             </div>
             <div class="mb-3 row">
                 <label for="jurusan" class="col-sm-2 col-form-label"></label>
-                <div class="col-sm-10"><button type="submit" class="btn btn-primary" name="submit">SIMPAN</button></div>
+                <div class="col-sm-10"><button type="submit" class="btn btn-primary" name="submit">Simpan</button> <a class="btn btn-primary" href="{{ url('user') }}"> Kembali</a>
             </div>
           </form>
         </div>

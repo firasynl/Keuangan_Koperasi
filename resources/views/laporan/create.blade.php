@@ -1,5 +1,5 @@
-@extends('laporan.layout')
-@section('konten')
+@extends('layouts.mainlayout')
+@section('content')
 <!-- START FORM -->
 <form action='{{ url('laporan') }}' method='post'>
 @csrf

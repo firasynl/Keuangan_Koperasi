@@ -1,4 +1,4 @@
-@extends('hutangs.layout')
+@extends('layouts.mainlayout')
      
 @section('content')
     <div class="row">

@@ -4,10 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LaporanController;
 
 
+use App\Http\Controllers\SimpananController;
 use App\Http\Controllers\transaksiController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\InvestasiController;
 use App\Http\Controllers\HutangController;
+use App\Http\Controllers\signupController;
+use App\Http\Controllers\loginController;
 
 
 
@@ -58,3 +61,8 @@ Route::get('/Investasi/Delete/{id_investasi}', [InvestasiController::class, 'Del
 //Router hutang
 Route::resource('/hutangs', HutangController::class);
 
+//Router login
+Route::resource('/login', loginController::class);
+
+//Router signup
+Route::resource('/signup', signupController::class);

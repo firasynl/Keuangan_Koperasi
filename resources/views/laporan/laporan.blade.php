@@ -1,18 +1,25 @@
-@extends('layouts.main')
+@extends('layouts.mainlayout')
 @section('content')    
         <!-- START DATA -->
         <div class="my-3 p-3 bg-body rounded shadow-sm">
-                <!-- FORM PENCARIAN -->
-                <div class="pb-3">
-                  <form class="d-flex" action="" method="get">
-                      <input class="form-control me-1" type="search" name="katakunci" value="{{ Request::get('katakunci') }}" placeholder="Masukkan kata kunci" aria-label="Search">
-                      <button class="btn btn-secondary" type="submit">Cari</button>
-                  </form>
-                </div>
-                
                 <!-- TOMBOL TAMBAH DATA -->
                 <div class="pb-3">
-                  <a href='{{ route('laporan.create') }}' class="btn btn-primary">+ Tambah Data</a>
+                    <h1 class="text-center mb-4">Data Laporan</h1>
+                  <a href='{{ route('laporan.create') }}' class="btn btn-success">+ Tambah Data</a>
+                    <div>
+                            @if(Session::has('success'))
+                                <div class = "pt3">
+                                    <div class = "alert alert-success" Id="alert">
+                                        {{Session::get('success')}}
+                                    </div>
+                                </div>
+                                <script>
+                                        setTimeout(function(){
+                                            document.getElementById('alert').style.display = 'none';
+                                        }, 2500);
+                                </script>
+                            @endif
+                    </div>
                 </div>
           
                 <table class="table table-striped">
