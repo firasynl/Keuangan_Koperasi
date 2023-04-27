@@ -1,18 +1,17 @@
 @extends('layouts.mainlayout')
 @section('content')    
-    
-    
 
-    <div class="container">
         <div class="my-3 p-3 bg-body rounded shadow-sm">
             <div class="pb-3">
                 <h1 class="text-center mb-4">Data Investasi</h1>
-                <a href="/Investasi/TambahDataInvestasi" class="btn btn-success">Tambah +</a>
+                <a href="/Investasi/TambahDataInvestasi" class="btn btn-success">+ Tambah Data</a>
             </div>
-            <div class="row">
+            <div>
                 @if ($message = Session::get('success'))
-                    <div class="alert alert-success" Id="alert">
-                        {{$message}}
+                    <div class = "pt3">
+                        <div class="alert alert-success" Id="alert">
+                            {{$message}}
+                        </div>
                     </div>
                     <script>
                         setTimeout(function(){
@@ -20,7 +19,8 @@
                         }, 2500);
                     </script>
                 @endif
-                <table class="table">
+            </div>
+                <table class="table table-striped">
                     <thead>
                         <tr>
                         <th scope="col">Id</th>
@@ -36,18 +36,16 @@
                         <tr>
                             <td>{{$row->id_investasi}}</td>
                             <td>{{$row->tanggal}}</td>
-                            <td>{{$row->nilai_investasi}}</td>
+                            <td>Rp. {{$row->nilai_investasi}}</td>
                             <td>{{$row->jenis_investasi}}</td>
                             <td>{{$row->nama_investor}}</td>
                             <td>
-                                <a href="/Investasi/ShowDataInvestasi/{{$row->id_investasi}}" class="btn btn-warning">Edit</a>
-                                <a href="/Investasi/Delete/{{$row->id_investasi}}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                                <a href="/Investasi/ShowDataInvestasi/{{$row->id_investasi}}" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="/Investasi/Delete/{{$row->id_investasi}}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                             </td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
-            </div>
         </div>
-    </div>
 @endsection

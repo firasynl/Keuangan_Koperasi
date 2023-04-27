@@ -73,6 +73,6 @@ class SimpananController extends Controller
         $simpanan->delete();
 
         return redirect()->route('simpanans.index')
-                        ->with('success','Data deleted successfully');
+                        ->with('success','Data berhasil dihapus!');
     }
 }

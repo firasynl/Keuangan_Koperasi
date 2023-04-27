@@ -1,14 +1,13 @@
-@extends('laporan.layout')
-@section('konten')
+@extends('layouts.mainlayout')
+@section('content')
 <!-- START FORM -->
-<form action='{{ url('laporan') }}' method='post'>
+<form action='{{ url('laporan/'.$data->id_laporan) }}' method='post'>
 @csrf
+@method('PUT')
         <div class="my-3 p-3 bg-body rounded shadow-sm">
             <div class="mb-3 row">
-                <label for="id_users" class="col-sm-2 col-form-label">ID Laporan</label>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control" name='id_laporan' id="id_laporan">
-                </div>
+                <label for="id_laporan" class="col-sm-2 col-form-label">ID Laporan</label>
+                    {{ $data->id_laporan }}
             </div>
             <div class="mb-3 row">
                 <label for="nama" class="col-sm-2 col-form-label">Nama Laporan</label>

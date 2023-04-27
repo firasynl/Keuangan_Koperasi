@@ -42,27 +42,13 @@
                         <a class="nav-link" href="#"><span class="fas fa-user-alt"></span> Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="fas fa-sign-out-alt"></span> Logout</a>
+                        <a class="nav-link" href="/"><span class="fas fa-sign-out-alt"></span> Logout</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <main role="main" class="container">
-        <div>
-            @if(Session::has('success'))
-                <div class = "pt3">
-                    <div class = "alert alert-success" Id="alert">
-                        {{Session::get('success')}}
-                    </div>
-                </div>
-                <script>
-                        setTimeout(function(){
-                            document.getElementById('alert').style.display = 'none';
-                        }, 2500);
-                </script>
-            @endif
-        </div>
         <div class="tempat" style="margin-top: 5rem;">
             @yield('content')
         </div>

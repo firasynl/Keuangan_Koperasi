@@ -61,7 +61,6 @@ class LaporanController extends Controller
     public function update(Request $request, string $id)
     {
         $data = [
-            'id_laporan'=>$request->id_laporan,
             'nama_laporan'=>$request->nama_laporan,
             'tgl_laporan'=>$request->tgl_laporan,
             'jenis_laporan'=>$request->jenis_laporan

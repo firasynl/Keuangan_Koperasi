@@ -1,9 +1,24 @@
-@extends('layouts.main')
+@extends('layouts.mainlayout')
 @section('content')    
         <!-- START DATA -->
         <div class="my-3 p-3 bg-body rounded shadow-sm">
                 <div class="pb-3">
-                  <a href='user/create' class="btn btn-primary">+ Tambah Data</a>
+                    <h1 class="text-center mb-4">Data Pengguna</h1>
+                    <a href='user/create' class="btn btn-success">+ Tambah Data</a>
+                    <div>
+                        @if(Session::has('success'))
+                            <div class = "pt3">
+                                <div class = "alert alert-success" Id="alert">
+                                    {{Session::get('success')}}
+                                </div>
+                            </div>
+                            <script>
+                                    setTimeout(function(){
+                                        document.getElementById('alert').style.display = 'none';
+                                    }, 2500);
+                            </script>
+                        @endif
+                    </div>
                 </div>
           
                 <table class="table table-striped">
