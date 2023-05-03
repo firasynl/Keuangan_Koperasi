@@ -6,6 +6,7 @@ use App\Http\Controllers\LaporanController;
 
 use App\Http\Controllers\SimpananController;
 use App\Http\Controllers\transaksiController;
+use App\Http\Controllers\anggotaController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\InvestasiController;
 use App\Http\Controllers\HutangController;
@@ -46,6 +47,9 @@ Route::post('/update/{id}transaksi', [transaksiController::class, "update"])->na
 Route::get('/delete/{id}transaksi', [transaksiController::class, "delete"])->name("deletetransaksi");
 
 Route::resource('user', userController::class);
+
+/*Anggota Routes */
+Route::resource('anggota', anggotaController::class);
 
 /* Investasi Routes */
 Route::get('/Investasi', [InvestasiController::class, 'index'])->name('/Investasi');
