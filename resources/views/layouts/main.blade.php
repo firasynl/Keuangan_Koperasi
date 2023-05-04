@@ -16,7 +16,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/user">Pengguna</a>
+                        <a class="nav-link" href="/anggota">Pengguna</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Investasi">Investasi</a>
