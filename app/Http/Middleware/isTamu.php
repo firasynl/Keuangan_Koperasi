@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class alreadyLogin
+class isTamu
 {
     /**
      * Handle an incoming request.
@@ -18,9 +18,8 @@ class alreadyLogin
     {
         
         if (Auth::check()) {
-            return redirect()->route('/home');
+            return redirect('/home')->with('success', 'Anda sudah berada dalam keadaan login');
         }
-    
-        return view('auth.login');
+        return $next($request);
     }
 }

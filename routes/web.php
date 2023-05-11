@@ -68,6 +68,6 @@ Route::get('/Investasi/Delete/{id_investasi}', [InvestasiController::class, 'Del
 Route::resource('/hutangs', HutangController::class)->middleware('isLogin');
 
 //Router login & logout
-Route::get('sesi',[sessionController::class, 'index']);
+Route::get('sesi',[sessionController::class, 'index'])->middleware('isTamu');
 Route::get('sesi/logout',[sessionController::class, 'logout']);
 Route::post('sesi/login',[sessionController::class, 'login']);
