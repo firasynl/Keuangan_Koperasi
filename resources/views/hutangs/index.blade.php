@@ -39,12 +39,12 @@
                             <td>{{ ++$i }}</td>
                             <td>{{ $hutang->nama_kreditur }}</td>
                             <td>{{ $hutang->jenis_hutang }}</td>
-                            <td>{{ $hutang->jumlah_hutang }}</td>
+                            <td>Rp {{number_format($hutang->jumlah_hutang, 2)}}</td>
                             <td>{{ $hutang->tgl_jatuhtempo }}</td>
                             <td>
                                 <form action="{{ route('hutangs.destroy',$hutang->id) }}" method="POST">
                     
-                                    <a class="btn btn-primary" href="{{ route('hutangs.edit',$hutang->id) }}">Edit</a>
+                                    <a class="btn btn-warning" href="{{ route('hutangs.edit',$hutang->id) }}">Edit</a>
                     
                                     @csrf
                                     @method('DELETE')

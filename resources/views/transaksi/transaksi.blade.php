@@ -7,6 +7,7 @@
                 <div class="pb-3">
                     <h1 class="text-center mb-4">Daftar Transaksi</h1>
                     <a href='{{ route('create') }}' class="btn btn-success">+ Tambah Data</a>
+                </div>
                     <div>
                         @if(Session::has('success'))
                             <div class = "pt3">
@@ -20,7 +21,6 @@
                                     }, 2500);
                             </script>
                         @endif
-                    </div>
                 </div>
           
                 <table class="table table-striped">
@@ -42,14 +42,14 @@
                         <td>{{ $row->namatransaksi }}</td>
                         <td>{{ $row->tgltransaksi }}</td>
                         <td>{{ $row->statustransaksi }}</td>
-                        <td> Rp. {{ $row->jumlahtransaksi }}</td>
+                        <td> Rp {{number_format($row->jumlahtransaksi, 2)}}</td>
                         <td>{{ $row->deskripsitransaksi }}</td>
                         <td>
-                            <a href="{{ route("deletetransaksi",$row->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Apakah kamu yakin ingin menghapus data ini?');">
-                                Delete
-                            </a>
                             <a href="{{ route("edittransaksi",$row->id) }}" class="btn btn-warning btn-sm">
                                 Edit
+                            </a>
+                            <a href="{{ route("deletetransaksi",$row->id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Apakah kamu yakin ingin menghapus data ini?');">
+                                Delete
                             </a>
                             </td>
                       </tr>

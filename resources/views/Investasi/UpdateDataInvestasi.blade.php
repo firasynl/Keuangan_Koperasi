@@ -37,7 +37,7 @@
                                 <label for="InputNamaInvestor" class="form-label">Nama Investor</label>
                                 <input type="text" name="nama_investor" class="form-control" id="InputNamaInvestor" value="{{$data->nama_investor}}">
                               </div>
-                            <button type="submit" class="btn btn-primary">Submit</button> <a class="btn btn-primary" href="/Investasi"> Kembali</a>
+                            <button type="submit" class="btn btn-primary">Submit</button> <a class="btn btn-outline-danger btn-xl" href="/Investasi"> Kembali</a>
                           </form> 
                     </div>
                 </div> 

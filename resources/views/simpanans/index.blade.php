@@ -7,6 +7,7 @@
                 <div class="pb-3">
                     <h1 class="text-center mb-4">Data Simpanan</h1>
                     <a href='{{ route('simpanans.create') }}' class="btn btn-success">+ Tambah Data</a>
+                </div>
                     <div>
                         @if(Session::has('success'))
                             <div class = "pt3">
@@ -21,7 +22,6 @@
                             </script>
                         @endif
                     </div>
-                </div>
           
                 <table class="table table-striped">
                     <thead>
@@ -40,7 +40,7 @@
                             <td>{{ ++$i }}</td>
                             <td>{{ $simpanan->tgl_setoran }}</td>
                             <td>{{ $simpanan->anggota_id }}</td>
-                            <td>{{ $simpanan->jumlah_simpanan }}</td>
+                            <td>Rp {{number_format($simpanan->jumlah_simpanan, 2)}}</td>
                             <td>{{ $simpanan->jenis_simpanan }}</td>
                             <td>
                                 <form action="{{ route('simpanans.destroy',$simpanan->id) }}" method="POST">

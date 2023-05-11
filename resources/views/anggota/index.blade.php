@@ -5,6 +5,7 @@
                 <div class="pb-3">
                     <h1 class="text-center mb-4">Data Pengguna</h1>
                     <a href='anggota/create' class="btn btn-success">+ Tambah Data</a>
+                </div>
                     <div>
                         @if(Session::has('success'))
                             <div class = "pt3">
@@ -19,7 +20,7 @@
                             </script>
                         @endif
                     </div>
-                </div>
+                
           
                 <table class="table table-striped">
                     <thead>
