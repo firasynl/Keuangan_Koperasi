@@ -1,61 +1,37 @@
 @extends('layouts.mainlayout')
-     
-@section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edit Data</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('hutangs.index') }}"> Kembali</a>
+@section('content')    
+    <h1 class="text-center mb-4">Update Data Hutang</h1>
+    
+    <div class="container">
+         
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="{{ route('hutangs.update', $hutang->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                                <div class="mb-3">
+                                    <label for="nama_kreditur" class="form-label">Nama Kreditur</label>
+                                        <input type="text" class="form-control" name='nama_kreditur' id="nama_kreditur"  value="{{ $hutang->nama_kreditur }}">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="jenis_hutang" class="form-label">Jenis Hutang</label>
+                                        <input type="text" class="form-control" name='jenis_hutang' id="jenis_hutang"  value="{{ $hutang->jenis_hutang }}">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="jumlah_hutang" class="form-label">Jumlah Hutang</label>
+                                        <input type="number" class="form-control" name='jumlah_hutang' id="jumlah_hutang"  value="{{ $hutang->jumlah_hutang }}">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="tgl_jatuhtempo" class="form-label">Tanggal Jatuh Tempo Hutang</label>
+                                        <input type="date" class="form-control" name='tgl_jatuhtempo' id="tgl_jatuhtempo"  value="{{ $hutang->tgl_jatuhtempo }}">
+                                </div>
+                            <button type="submit" class="btn btn-primary">Submit</button> <a class="btn btn-outline-danger btn-xl" href="{{ route('hutangs.index') }}"> Kembali</a>
+                          </form> 
+                    </div>
+                </div> 
             </div>
         </div>
     </div>
-     
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    
-    <form action="{{ route('hutangs.update', $hutang->id) }}" method="POST" enctype="multipart/form-data"> 
-        @csrf
-        @method('PUT')
-     
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Nama Kreditur:</strong>
-                    <input type="text" name="nama_kreditur" class="form-control" value="{{ $hutang->nama_kreditur }}">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Jenis Hutang:</strong>
-                    <input type="text" name="jenis_hutang" class="form-control" placeholder="jenis hutang" value="{{ $hutang->jenis_hutang }}">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Jumlah Hutang:</strong>
-                    <input type="number" name="jumlah_hutang" class="form-control" placeholder="Contoh: Rp 100.000" value="{{ $hutang->jumlah_hutang }}">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Tanggal Jatuh Tempo:</strong>
-                    <input type="date" name="tgl_jatuhtempo" class="form-control" value="{{ $hutang->tgl_jatuhtempo }}">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
-     
-    </form>
 @endsection

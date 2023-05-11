@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
 class sessionController extends Controller
@@ -12,6 +13,7 @@ class sessionController extends Controller
     }
 
     function login(Request $request){
+        
         $request->validate([
             'email'=>'required',
             'password'=>'required'
@@ -26,10 +28,11 @@ class sessionController extends Controller
         ];
 
         if(Auth::attempt($infologin)){
-            return redirect('/')->with('success', 'Berhasil Login');
+            return redirect('/home')->with('success', 'Berhasil Login');
         }
         else{
-            return redirect('/sesi')->withErrors('Email atau Password yang dimasukkan tidak Valid!');
+            $errorMessage = 'Email atau Password yang dimasukkan tidak Valid!';
+            return redirect('/sesi')->withErrors($errorMessage);
         }
     }
 

@@ -1,37 +1,37 @@
 @extends('layouts.mainlayout')
-@section('content')
-<!-- START FORM -->
-<form action='{{ url('laporan/'.$data->id_laporan) }}' method='post'>
-@csrf
-@method('PUT')
-        <div class="my-3 p-3 bg-body rounded shadow-sm">
-            <div class="mb-3 row">
-                <label for="id_laporan" class="col-sm-2 col-form-label">ID Laporan</label>
-                    {{ $data->id_laporan }}
+@section('content')    
+    <h1 class="text-center mb-4">Update Data Laporan Keuangan</h1>
+    
+    <div class="container">
+         
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-body">
+                        <form action='{{ url('laporan/'.$data->id_laporan) }}' method="POST">
+                            @csrf
+                            @method('PUT')
+                            <div class="mb-3">
+                                <label for="id_laporan" class="form-label">ID Laporan</label>
+                                    {{ $data->id_laporan }}
+                            </div>
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">Nama Laporan</label>
+                                    <input type="text" class="form-control" name='nama_laporan' id="nama_laporan" value="{{$data->nama_laporan}}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="no_telp" class="form-label">Tanggal Laporan</label>
+                                    <input type="date" class="form-control" name='tgl_laporan' id="tgl_laporan" value="{{$data->tgl_laporan}}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="kategori_users" class="form-label">Jenis Laporan</label>
+                                    <input type="text" class="form-control" name='jenis_laporan' id="jenis_laporan" value="{{$data->jenis_laporan}}">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button> <a class="btn btn-outline-danger btn-xl" href="{{ url('laporan') }}"> Kembali</a>
+                          </form> 
+                    </div>
+                </div> 
             </div>
-            <div class="mb-3 row">
-                <label for="nama" class="col-sm-2 col-form-label">Nama Laporan</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name='nama_laporan' id="nama_laporan">
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="no_telp" class="col-sm-2 col-form-label">Tanggal Laporan</label>
-                <div class="col-sm-10">
-                    <input type="date" class="form-control" name='tgl_laporan' id="tgl_laporan">
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="kategori_users" class="col-sm-2 col-form-label">Jenis Laporan</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name='jenis_laporan' id="jenis_laporan">
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="jurusan" class="col-sm-2 col-form-label"></label>
-                <div class="col-sm-10"><button type="submit" class="btn btn-primary" name="submit">SIMPAN</button></div>
-            </div>
-          </form>
         </div>
-        <!-- AKHIR FORM --> 
+    </div>
 @endsection
