@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unique('id_users');
             $table->string('nama');
             $table->string('no_telp');
-            $table->string('kategori_users');
+            $table->enum('kategori_users', ['Ketua', 'Anggota']);
         });
     }
 
