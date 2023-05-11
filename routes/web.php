@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\LaporanController;
-
-
 use App\Http\Controllers\SimpananController;
 use App\Http\Controllers\transaksiController;
 use App\Http\Controllers\anggotaController;
@@ -29,6 +28,10 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+Route::get('/home', function () {
+    return view('home');
+})->middleware('isLogin');
+
 Route::resource('laporan',LaporanController::class)->middleware('isLogin');
 
 // Route Simpanan
@@ -41,7 +44,7 @@ Route::get('/transaksi', [transaksiController::class, 'index'])->name('transaksi
 */
 Route::get('/createtransaksi', [transaksiController::class, 'create'])->name('create')->middleware('isLogin');
 Route::post('/storeCreate', [transaksiController::class, "store"])->name("storeCreate")->middleware('isLogin');
-Route::get('/edit/{id}Pendapatan', [transaksiController::class, "edit"])->name("edittransaksi")->middleware('isLogin');;
+Route::get('/edit/{id}Pendapatan', [transaksiController::class, "edit"])->name("edittransaksi")->middleware('isLogin');
 Route::post('/update/{id}transaksi', [transaksiController::class, "update"])->name("updatetransaksi")->middleware('isLogin');
 Route::get('/delete/{id}transaksi', [transaksiController::class, "delete"])->name("deletetransaksi")->middleware('isLogin');
 
@@ -62,7 +65,7 @@ Route::post('/Investasi/UpdateDataInvestasi/{id_investasi}', [InvestasiControlle
 Route::get('/Investasi/Delete/{id_investasi}', [InvestasiController::class, 'Delete'])->name('Delete')->middleware('isLogin');
 
 //Router hutang
-Route::resource('/hutangs', HutangController::class)->middleware('isLogin');;
+Route::resource('/hutangs', HutangController::class)->middleware('isLogin');
 
 //Router login & logout
 Route::get('sesi',[sessionController::class, 'index']);

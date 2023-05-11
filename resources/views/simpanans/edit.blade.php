@@ -1,66 +1,42 @@
 @extends('layouts.mainlayout')
-     
-@section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edit Data</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('simpanans.index') }}"> Kembali</a>
-            </div>
-        </div>
-    </div>
-     
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+@section('content')    
+    <h1 class="text-center mb-4">Update Data Pengguna</h1>
     
-    <form action="{{ route('simpanans.update',$simpanan->id) }}" method="POST" enctype="multipart/form-data"> 
-        @csrf
-        @method('PUT')
-     
-        <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Tanggal Setoran:</strong>
-                <input type="date" name="tgl_setoran" class="form-control">
+    <div class="container">
+         
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="{{ route('simpanans.update',$simpanan->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                                <div class="mb-3">
+                                <label for="tgl_setoran" class="form-label">Tanggal Setoran</label>
+                                    <input type="date" name="tgl_setoran" class="form-control" value="{{$simpanan->tgl_setoran}}">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="anggota_id" class="form-label">ID Anggota</label>
+                                        <input type="text" class="form-control" name='anggota_id' value="{{$simpanan->anggota_id}}" id="nama">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="jumlah_simpanan" class="form-label">Jumlah Simpanan</label>
+                                        <input type="number" class="form-control" name='jumlah_simpanan' value="{{$simpanan->jumlah_simpanan}}" id="no_telp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="jenis_simpanan" class="form-label">Jenis Simpanan</label>
+                                        <select class="form-select" name="jenis_simpanan" id="jenis_simpanan" aria-label="Default select example" required="required">
+                                            <option selected >Pilih Jenis Simpanan</option>
+                                            <option value="Simpanan Pokok">Simpanan Pokok</option>
+                                            <option value="Simpanan Wajib">Simpanan Wajib</option>
+                                            <option value="Simpanan Sukarela">Simpanan Sukarela</option>
+                                        </select>
+                                </div>
+                            <button type="submit" class="btn btn-primary">Submit</button> <a class="btn btn-outline-danger btn-xl" href="{{ route('simpanans.index') }}"> Kembali</a>
+                          </form> 
+                    </div>
+                </div> 
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>ID Anggota:</strong>
-                <input type="text" name="anggota_id" class="form-control" placeholder="ID Anggota">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Jumlah Simpanan:</strong>
-                <input type="text" name="jumlah_simpanan" class="form-control" placeholder="Contoh: Rp 15.000">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Jenis Simpanan:</strong>
-                <select class="form-control"  name="jenis_simpanan">
-                <option selected >Pilih Jenis Simpanan</option>
-                <option value="Simpanan Pokok">Simpanan Pokok</option>
-                <option value="Simpanan Wajib">Simpanan Wajib</option>
-                <option value="Simpanan Sukarela">Simpanan Sukarela</option>
-                </select>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>
-     
-    </form>
 @endsection

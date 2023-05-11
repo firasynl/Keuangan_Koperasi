@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up Form by Colorlib</title>
+    <title>Koperasi Keuangan</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -28,6 +28,23 @@
                         <h2 class="form-title">Login</h2>
                         <form action="/sesi/login" method="POST">
                             @csrf
+
+                            @if($errors->any())
+                                <div class="alert alert-danger" id="alert">
+                                    <ul>
+                                        @foreach($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                                <script>
+                                    setTimeout(function(){
+                                            document.getElementById('alert').style.display = 'none';
+                                        }, 5000);
+                                </script>
+                            @endif
+
+
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="email" id="email" placeholder="email"/>
@@ -62,5 +79,5 @@
 <!-- JS -->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="js/main.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>

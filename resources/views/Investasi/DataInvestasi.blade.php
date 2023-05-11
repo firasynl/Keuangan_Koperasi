@@ -36,7 +36,7 @@
                         <tr>
                             <td>{{$row->id_investasi}}</td>
                             <td>{{$row->tanggal}}</td>
-                            <td>Rp. {{$row->nilai_investasi}}</td>
+                            <td>Rp {{number_format($row->nilai_investasi, 2)}}</td>
                             <td>{{$row->jenis_investasi}}</td>
                             <td>{{$row->nama_investor}}</td>
                             <td>

@@ -6,6 +6,7 @@
                 <div class="pb-3">
                     <h1 class="text-center mb-4">Data Laporan</h1>
                   <a href='{{ route('laporan.create') }}' class="btn btn-success">+ Tambah Data</a>
+                  </div>
                     <div>
                             @if(Session::has('success'))
                                 <div class = "pt3">
@@ -19,7 +20,6 @@
                                         }, 2500);
                                 </script>
                             @endif
-                    </div>
                 </div>
           
                 <table class="table table-striped">
