@@ -11,10 +11,6 @@
                         <form action='{{ url('anggota') }}' method="POST">
                             @csrf
                             <div class="mb-3">
-                                <label for="id_users" class="form-label">ID User</label>
-                                    <input type="number" class="form-control" name='id_users' id="id_users">
-                            </div>
-                            <div class="mb-3">
                                 <label for="nama" class="form-label">Nama</label>
                                     <input type="text" class="form-control" name='nama' id="nama">
                             </div>

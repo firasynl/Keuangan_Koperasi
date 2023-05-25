@@ -13,7 +13,7 @@ class anggotaController extends Controller
     public function index()
     {
         
-        $data = anggota::orderBy('id_users', 'asc')->get();
+        $data = anggota::orderBy('id', 'asc')->get();
         return view('anggota.index')->with('data',$data);
     }
 
@@ -31,7 +31,6 @@ class anggotaController extends Controller
     public function store(Request $request)
     {
         $data = [
-            'id_users'=>$request->id_users,
             'nama'=>$request->nama,
             'no_telp'=>$request->no_telp,
             'kategori_users'=>$request->kategori_users
@@ -54,7 +53,7 @@ class anggotaController extends Controller
      */
     public function edit(string $id)
     {
-        $data = anggota::where('id_users',$id)->first();
+        $data = anggota::where('id',$id)->first();
         return view('anggota.edit')->with('data',$data);
     }
 
@@ -68,7 +67,7 @@ class anggotaController extends Controller
             'no_telp'=>$request->no_telp,
             'kategori_users'=>$request->kategori_users
         ];
-        anggota::where('id_users',$id)->update($data);
+        anggota::where('id',$id)->update($data);
         return redirect()->to('anggota')->with('success','Berhasil mengedit Data');
     }
 
@@ -77,7 +76,7 @@ class anggotaController extends Controller
      */
     public function destroy(string $id)
     {
-        anggota::where('id_users',$id)->delete();
+        anggota::where('id',$id)->delete();
         return redirect()->to('anggota')->with('success', 'Berhasil menghapus User');
     }
 }

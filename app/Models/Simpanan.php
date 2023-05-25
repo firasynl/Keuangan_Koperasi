@@ -11,4 +11,5 @@ class Simpanan extends Model
 
     protected $fillable = ['tgl_setoran', 'anggota_id', 'jumlah_simpanan', 'jenis_simpanan',
     ];
+
 }

@@ -35,14 +35,14 @@
                     <tbody>
                         @foreach ($data as $item)
                         <tr>
-                            <td>{{ $item->id_users }}</td>
+                            <td>{{ $item->id}}</td>
                             <td>{{$item->nama}}</td>
                             <td>{{ $item->no_telp }}</td>
                             <td>{{ $item->kategori_users }}</td>
                             <td>
-                                <a href='{{url('anggota/'.$item->id_users.'/edit')}}' class="btn btn-warning btn-sm">Edit</a>
+                                <a href='{{url('anggota/'.$item->id.'/edit')}}' class="btn btn-warning btn-sm">Edit</a>
 
-                                <form onsubmit="return confirm('Yakin akan menghapus data?')" class='d-inline' action="{{url('anggota/'.$item->id_users)}}" method="post">
+                                <form onsubmit="return confirm('Yakin akan menghapus data?')" class='d-inline' action="{{url('anggota/'.$item->id)}}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" name="submit" class="btn btn-danger btn-sm">

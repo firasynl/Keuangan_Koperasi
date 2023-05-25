@@ -8,13 +8,9 @@
             <div class="col-8">
                 <div class="card">
                     <div class="card-body">
-                        <form action='{{ url('anggota/'.$data->id_users) }}' method="POST">
+                        <form action='{{ url('anggota/'.$data->id) }}' method="POST">
                             @csrf
                             @method('PUT')
-                                <div class="mb-3">
-                                <label for="id_users" class="form-label">ID User</label>
-                                    {{ $data->id_users }}
-                                </div>
                                 <div class="mb-3">
                                     <label for="nama" class="form-label">Nama</label>
                                         <input type="text" class="form-control" name='nama'value="{{$data->nama}}" id="nama">
@@ -27,8 +23,8 @@
                                     <label for="kategori_users" class="form-label">Kategori User</label>
                                         <select class="form-select" name="kategori_users" id="kategori_users" aria-label="Default select example" required="required">
                                             <option selected>Pilih Kategori User</option>
-                                            <option value="1">Ketua</option>
-                                            <option value="2">Anggota</option>
+                                            <option value="Ketua">Ketua</option>
+                                            <option value="Anggota">Anggota</option>
                                         </select>
                                 </div>
                             <button type="submit" class="btn btn-primary">Submit</button> <a class="btn btn-outline-danger btn-xl" href="{{ url('anggota') }}"> Kembali</a>

@@ -50,6 +50,7 @@ Route::get('/delete/{id}transaksi', [transaksiController::class, "delete"])->nam
 
 Route::resource('user', userController::class)->middleware('isLogin');
 
+
 /*Anggota Routes */
 Route::resource('anggota', anggotaController::class)->middleware('isLogin');
 
@@ -71,3 +72,5 @@ Route::resource('/hutangs', HutangController::class)->middleware('isLogin');
 Route::get('sesi',[sessionController::class, 'index'])->middleware('isTamu');
 Route::get('sesi/logout',[sessionController::class, 'logout']);
 Route::post('sesi/login',[sessionController::class, 'login']);
+Route::get('sesi/register',[sessionController::class, 'register']);
+Route::post('sesi/create',[sessionController::class, 'create']);
