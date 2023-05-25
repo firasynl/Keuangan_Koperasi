@@ -38,7 +38,7 @@
                         @foreach ($simpanans as $simpanan)
                         <tr>
                             <td>{{ ++$i }}</td>
-                            <td>{{ $simpanan->tgl_setoran }}</td>
+                            <td>{{ $simpanan->tgl_setoran }}</td> 
                             <td>{{ $simpanan->anggota_id }}</td>
                             <td>Rp {{number_format($simpanan->jumlah_simpanan, 2)}}</td>
                             <td>{{ $simpanan->jenis_simpanan }}</td>
@@ -58,5 +58,4 @@
                     </tbody>
             </table>
           </div>
-          {!! $simpanans->links() !!}
 @endsection

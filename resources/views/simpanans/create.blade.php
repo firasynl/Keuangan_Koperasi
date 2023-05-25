@@ -16,7 +16,13 @@
                             </div>
                             <div class="mb-3">
                                 <label for="anggota_id" class="form-label">ID Anggota</label>
-                                <input type="text" class="form-control" name="anggota_id" id="anggota_id">
+                                <select class="form-select" name="anggota_id" id="anggota_id" aria-label="Default select example" required="required">
+                                <option selected>Pilih Jenis Simpanan</option>
+                                    @foreach($anggota as $anggota)
+                                        <option selected value={{ $anggota->id }}>{{ $anggota->nama}}</option>
+                                    @endforeach
+                                            
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="jumlah_simpanan" class="form-label">Jumlah Simpanan</label>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\anggota;
 use App\Models\Simpanan;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -14,15 +15,16 @@ class SimpananController extends Controller
     //
     public function index(): View
     {
-        $simpanans = Simpanan::latest()->paginate(5);
-
-        return view('simpanans.index', compact('simpanans'))
+        $simpanans = Simpanan::get();
+        $anggota = anggota::get();
+        return view('simpanans.index', compact('simpanans', 'anggota'))
         ->with('i', (request()->input('page', 1) - 1) * 5);;
     }
 
-    public function create(): View
+    public function create()
     {
-        return view('simpanans.create');
+        $anggota = anggota::get();
+        return view('simpanans.create', compact('anggota'));
     }
 
     public function store(Request $request): RedirectResponse
