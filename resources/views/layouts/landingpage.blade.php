@@ -20,7 +20,7 @@
             <ul class="nav navbar-nav me-auto mb-2 mb-lg-0"></ul>
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/signup"><span class="fas fa-user"></span> Sign Up</a>
+                        <a class="nav-link" href="/sesi/register"><span class="fas fa-user"></span> Sign Up</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/sesi"><span class="fas fa-sign-in-alt"></span> Login</a>

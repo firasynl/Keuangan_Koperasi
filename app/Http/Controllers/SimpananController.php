@@ -27,6 +27,7 @@ class SimpananController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
+        
         $this->validate($request, [
             'tgl_setoran' => 'required',
             'anggota_id' => 'required',
