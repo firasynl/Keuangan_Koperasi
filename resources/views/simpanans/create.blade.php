@@ -17,7 +17,7 @@
                             <div class="mb-3">
                                 <label for="anggota_id" class="form-label">ID Anggota</label>
                                 <select class="form-select" name="anggota_id" id="anggota_id" aria-label="Default select example" required="required">
-                                <option selected>Pilih Jenis Simpanan</option>
+                                <option selected>Pilih Anggota</option>
                                     @foreach($anggota as $anggota)
                                         <option selected value={{ $anggota->id }}>{{ $anggota->nama}}</option>
                                     @endforeach
