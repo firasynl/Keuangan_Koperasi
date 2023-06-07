@@ -52,6 +52,9 @@
                             </td>
                         </tr>
                         @endforeach
+                        <h1>Total Simpanan: {{ $totalSimpanan }}
+                            Total Hutang : {{ $totalHutang }}
+                        </h1>
                         
                     </tbody>
                 </table>

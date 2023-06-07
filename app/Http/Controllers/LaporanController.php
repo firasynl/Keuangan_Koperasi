@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Hutang;
 use App\Models\Laporan;
+use App\Models\Simpanan;
 use Illuminate\Http\Request;
 
 class LaporanController extends Controller
@@ -12,7 +15,10 @@ class LaporanController extends Controller
     public function index()
     {
         $data = laporan::orderBy('id_laporan', 'asc')->get();
-        return view('laporan.laporan')->with('data',$data);
+        $totalSimpanan = Simpanan::sum('jumlah_simpanan');
+        $totalHutang = Hutang::sum('jumlah_Hutang');
+        return view('laporan.laporan',compact('data', 'totalSimpanan', 'totalHutang'));
+        
     }
 
     /**
