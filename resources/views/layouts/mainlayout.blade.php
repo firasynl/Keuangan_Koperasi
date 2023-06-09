@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Keuangan Koperasi</title>
+    <title>Perpustakaan</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -12,13 +12,16 @@
   <body class="bg-light">
     <nav class="navbar fixed-top navbar-expand-lg bg-primary navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/home">Sistem Keuangan</a>
+            <a class="navbar-brand" href="/home">Sistem Perpustakaan</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
+                        <a class="nav-link" href="/Book">Pembukuan</a>
+                    </li>
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="/anggota">Pengguna</a>
                     </li>
                     <li class="nav-item">
@@ -35,7 +38,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/hutangs">Hutang</a>
-                    </li>
+                    </li> -->
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item">

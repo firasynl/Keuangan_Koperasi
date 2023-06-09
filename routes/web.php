@@ -13,6 +13,7 @@ use App\Http\Controllers\HutangController;
 use App\Http\Controllers\signupController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\sessionController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,3 +76,14 @@ Route::get('sesi/logout',[sessionController::class, 'logout']);
 Route::post('sesi/login',[sessionController::class, 'login']);
 Route::get('sesi/register',[sessionController::class, 'register']);
 Route::post('sesi/create',[sessionController::class, 'create']);
+
+/* UAS Ari  Routes */
+Route::get('/Book', [BookController::class, 'index'])->name('/Book')->middleware('isLogin');
+
+Route::get('/Book/TambahDataBook', [BookController::class, 'TambahDataBook'])->name('/Book/TambahDataBook')->middleware('isLogin');
+Route::post('/Book/InsertDataBook', [BookController::class, 'InsertDataBook'])->name('/Investasi/InsertDataBook')->middleware('isLogin');
+
+Route::get('/Book/ShowDataBook/{IDBuku}', [BookController::class, 'ShowDataBook'])->name('/Investasi/ShowDataBook')->middleware('isLogin');
+Route::post('/Book/UpdateDataBook/{IDBuku}', [BookController::class, 'UpdateDataBook'])->name('/Investasi/UpdateDataBook')->middleware('isLogin');
+
+Route::get('/Book/Delete/{IDBuku}', [BookController::class, 'Delete'])->name('Delete')->middleware('isLogin');
