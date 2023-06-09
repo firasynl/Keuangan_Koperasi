@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BukuFira extends Model
+class Kategori extends Model
 {
     use HasFactory;
-    protected $fillable = ['judul', 'penulis', 'penerbit','tahun_terbit', 'jumlah_stok', 'denda_buku',
-    ];
+
+    protected $fillable = ['nama_kategori'];
 }

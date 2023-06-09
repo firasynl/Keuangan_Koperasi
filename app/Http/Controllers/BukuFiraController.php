@@ -61,24 +61,39 @@ class BukuFiraController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(BukuFira $bukuFira)
+    public function edit(BukuFira $bukufira)
     {
         //
+        return view('bukufiras.edit',compact('bukufira'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, BukuFira $bukuFira)
+    public function update(Request $request, BukuFira $bukufira): RedirectResponse
     {
         //
+        $request->validate([
+            'judul' => 'required',
+            'penulis' => 'required',
+            'penerbit' => 'required',
+            'tahun_terbit' => 'required',
+            'jumlah_stok' => 'required',
+            'denda_buku' => 'required',
+        ]);
+        return redirect()->route('bukufiras.index')
+                        ->with('success','Product updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(BukuFira $bukuFira)
+    public function destroy(BukuFira $bukufira)
     {
         //
+        $bukufira->delete();
+         
+        return redirect()->route('bukufiras.index')
+                        ->with('success','Product deleted successfully');
     }
 }

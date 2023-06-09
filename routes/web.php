@@ -6,12 +6,15 @@ use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\SimpananController;
 use App\Http\Controllers\transaksiController;
 use App\Http\Controllers\anggotaController;
+use App\Http\Controllers\BukuFiraController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\InvestasiController;
 use App\Http\Controllers\HutangController;
 use App\Http\Controllers\signupController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\sessionController;
+use App\Models\Kategori;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,3 +77,7 @@ Route::get('sesi/logout',[sessionController::class, 'logout']);
 Route::post('sesi/login',[sessionController::class, 'login']);
 Route::get('sesi/register',[sessionController::class, 'register']);
 Route::post('sesi/create',[sessionController::class, 'create']);
+
+// firasyana
+Route::resource('bukufiras', BukuFiraController::class);
+Route::resource('kategoris', KategoriController::class);
