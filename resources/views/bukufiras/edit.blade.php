@@ -64,6 +64,17 @@
                     <input type="number" name="denda_buku" value="{{ $bukufira->denda_buku }}" class="form-control">
                 </div>
             </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Kategori</strong>
+                <select class="form-control" style="width: 100%;" name="kategori_id", id="kategori_id">
+                    <option disabled value>Pilih kategori</option>
+                    @foreach ($kat as $bukufiras)
+                    <option value="{{ $bukufiras->id }}">{{ $bukufiras->nama_kategori }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>

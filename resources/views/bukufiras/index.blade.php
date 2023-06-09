@@ -27,6 +27,7 @@
             <th>Tahun Terbit</th>
             <th>Jumlah Stok</th>
             <th>Denda</th>
+            <th>Kategori</th>
 
             <th width="280px">Action</th>
         </tr>
@@ -39,6 +40,7 @@
             <td>{{ $bukufira->tahun_terbit}}</td>
             <td>{{ $bukufira->jumlah_stok }}</td>
             <td>{{ $bukufira->denda_buku }}</td>
+            <td>{{ $bukufira->kategori->nama_kategori }}</td>
             <td>
                 <form action="{{ route('bukufiras.destroy',$bukufira->id) }}" method="POST">
    

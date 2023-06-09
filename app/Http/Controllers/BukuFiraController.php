@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BukuFira;
+use App\Models\Kategori;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -15,7 +16,7 @@ class BukuFiraController extends Controller
      */
     public function index(): View
     {
-        $bukufiras = BukuFira::latest()->paginate(5);
+        $bukufiras = BukuFira::with('kategori')->paginate(5);
         
         return view('bukufiras.index',compact('bukufiras'))
                     ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -27,7 +28,9 @@ class BukuFiraController extends Controller
     public function create(): View
     {
         //
-        return view('bukufiras.create');
+        $kat = Kategori::all();
+        return view('bukufiras.create', compact('kat'));
+
     }
 
     /**
@@ -43,6 +46,7 @@ class BukuFiraController extends Controller
             'tahun_terbit' => 'required',
             'jumlah_stok' => 'required',
             'denda_buku' => 'required',
+            'kategori_id' => 'required',
         ]);
         BukuFira::create($request->all());
          
@@ -64,7 +68,8 @@ class BukuFiraController extends Controller
     public function edit(BukuFira $bukufira)
     {
         //
-        return view('bukufiras.edit',compact('bukufira'));
+        $kat = Kategori::all();
+        return view('bukufiras.edit',compact('bukufira', 'kat'));
     }
 
     /**
