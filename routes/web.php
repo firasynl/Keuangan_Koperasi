@@ -6,6 +6,7 @@ use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\SimpananController;
 use App\Http\Controllers\transaksiController;
 use App\Http\Controllers\anggotaController;
+use App\Http\Controllers\bukuAditController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\InvestasiController;
 use App\Http\Controllers\HutangController;
@@ -48,7 +49,7 @@ Route::get('/edit/{id}Pendapatan', [transaksiController::class, "edit"])->name("
 Route::post('/update/{id}transaksi', [transaksiController::class, "update"])->name("updatetransaksi")->middleware('isLogin');
 Route::get('/delete/{id}transaksi', [transaksiController::class, "delete"])->name("deletetransaksi")->middleware('isLogin');
 
-Route::resource('user', userController::class)->middleware('isLogin');
+Route::resource('bukuadit', bukuAditController::class);
 
 
 /*Anggota Routes */
